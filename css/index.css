@@ -5492,3 +5492,9 @@ blockquote.pullquote.right {
 .read-mode #article-container .note .note-icon {
   color: var(--font-color);
 }
+body {
+  cursor: url("../img/mouse/1.png"), default;
+}
+a:hover {
+  cursor: url("../img/mouse/2.png"), pointer;
+}
