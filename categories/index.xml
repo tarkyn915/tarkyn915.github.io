@@ -13,15 +13,31 @@
         <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
         
         <guid>https://blog.tjq.one/categories/nginx/</guid>
-        <description>&lt;img src="https://blog.tjq.one/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Nginx" /&gt;</description>
+        <description>&lt;img src="https://blog.tjq.one/categories/nginx/nginx.png" alt="Featured image of post Nginx" /&gt;</description>
         </item>
         <item>
-        <title>Test</title>
-        <link>https://blog.tjq.one/categories/test/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <title>Blog</title>
+        <link>https://blog.tjq.one/categories/blog/</link>
+        <pubDate>Tue, 05 Dec 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.tjq.one/categories/test/</guid>
-        <description>&lt;img src="https://blog.tjq.one/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        <guid>https://blog.tjq.one/categories/blog/</guid>
+        <description>&lt;img src="https://blog.tjq.one/categories/blog/blog.jpg" alt="Featured image of post Blog" /&gt;</description>
+        </item>
+        <item>
+        <title>Linux</title>
+        <link>https://blog.tjq.one/categories/linux/</link>
+        <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.tjq.one/categories/linux/</guid>
+        <description>&lt;img src="https://blog.tjq.one/categories/linux/linux.png" alt="Featured image of post Linux" /&gt;</description>
+        </item>
+        <item>
+        <title>Docker</title>
+        <link>https://blog.tjq.one/categories/docker/</link>
+        <pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.tjq.one/categories/docker/</guid>
+        <description>&lt;img src="https://blog.tjq.one/categories/docker/docker.png" alt="Featured image of post Docker" /&gt;</description>
         </item>
         
     </channel>

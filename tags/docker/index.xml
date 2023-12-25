@@ -8,12 +8,12 @@
         <language>en</language>
         <copyright>Tarkyn</copyright>
         <lastBuildDate>Sun, 19 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tjq.one/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Docker 配置</title>
-        <link>https://blog.tjq.one/p/docker-%E9%85%8D%E7%BD%AE/</link>
+        <title>Docker 安装</title>
+        <link>https://blog.tjq.one/p/docker-%E5%AE%89%E8%A3%85/</link>
         <pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.tjq.one/p/docker-%E9%85%8D%E7%BD%AE/</guid>
-        <description>&lt;img src="https://d33wubrfki0l68.cloudfront.net/e7a6759eb6232b4280b83b18aa255289d65e4b6e/7698a/images/logo.webp" alt="Featured image of post Docker 配置" /&gt;&lt;h2 id=&#34;docker-安装&#34;&gt;Docker 安装&lt;/h2&gt;
+        <guid>https://blog.tjq.one/p/docker-%E5%AE%89%E8%A3%85/</guid>
+        <description>&lt;h2 id=&#34;docker-安装&#34;&gt;Docker 安装&lt;/h2&gt;
 &lt;p&gt;脚本自动安装，并设置开机自启&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

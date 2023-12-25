@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Linux系统目录结构 使用 ls / 就可以看到根目录 Linux系统中一切皆文件 swap分区是交换分区类似虚拟内存 目录 解释 /bin Binaries(二进制文件),存放常用的命令 /sbin system Binaries 超级用户使用的比较高级的管理程序和系统守护程序 /boot 存放启动Linux时用的核心文件,包括一些连接文件和镜像文件 /dev Device(设备)存放linux的外部设备，在linux中访问设备和文件的方式是一样的(所以说一切皆文件) /etc 存放所有系统管理所需要的配置文件和子目录 /home 用户的主目录,每一个用户都有自己目录 /lib library(库)存放系统最基本的动态链接共享库,类似Windows里的DLL文件,几乎所有的应用程序都需要这些共享库 /lost&#43;found 这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件 /usr unix shared resources(共享资源),类似 windows 下的 program files 目录 /opt optional(可选)这是给主机额外安装软件所摆放的目录 /mnt 临时挂载别的文件系统的，我们可以将光驱挂载在 /mnt/ 上然后进入该目录就可以查看光驱里的内容了 /proc Processes(进程),虚拟目录,他是系统内存的映射,访问这个目录可以获取系统信息 /run 运行目录,显示当前信息 重启就没了 /srv 该目录存放一些服务启动之后需要提取的数据 /sys 系统硬件相关的信息,该文件系统是内核设备树的一个直观反映 /tmp temporary(临时)存放一些临时文件 /var variable(变量)存放一些经常改变的东西,包括各种日志文件 VI/VIM编辑器 vi是Unix系统中最通用的文本编辑器 vim编辑器是从vi中发展出来的更强大的文本编辑器,可以主动以字体颜色辨别语法正确性,vim和vi编辑器完全兼容.
+vim编辑器中有三种模式 i进入编辑模式 :进入命令模式 :wq 保存写入 U(undo)可以回退之前的操作 Esc回到一般模式
+一般模式 指令 解释 yy 复制一行 p 粘贴 dd 删除一行 dw 删除一个单词 e 踏前斩(建议自己试一试) b 回城(建议自己试一试) gg 头 shift&#43;g 尾 编辑模式 指令 解释 i 当前光标前 a 当前光标后 o 当前光标下一行 I 光标所在行最前 A 光标所在行最后 O 当前光标行的上一行 命令模式 指令 解释 :set nu 打开行号 :set nonu 关闭行号 :w 保存 :q 退出 :wq 保存并退出 :q!'>
+<title>Linux 基础</title>
+
+<link rel='canonical' href='https://blog.tjq.one/p/linux-%E5%9F%BA%E7%A1%80/'>
+
+<link rel="stylesheet" href="/scss/style.min.24ef1cc321916467896e8c70c10c0ad7b98c2a8df14298032fb637216e397f50.css"><meta property='og:title' content='Linux 基础'>
+<meta property='og:description' content='Linux系统目录结构 使用 ls / 就可以看到根目录 Linux系统中一切皆文件 swap分区是交换分区类似虚拟内存 目录 解释 /bin Binaries(二进制文件),存放常用的命令 /sbin system Binaries 超级用户使用的比较高级的管理程序和系统守护程序 /boot 存放启动Linux时用的核心文件,包括一些连接文件和镜像文件 /dev Device(设备)存放linux的外部设备，在linux中访问设备和文件的方式是一样的(所以说一切皆文件) /etc 存放所有系统管理所需要的配置文件和子目录 /home 用户的主目录,每一个用户都有自己目录 /lib library(库)存放系统最基本的动态链接共享库,类似Windows里的DLL文件,几乎所有的应用程序都需要这些共享库 /lost&#43;found 这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件 /usr unix shared resources(共享资源),类似 windows 下的 program files 目录 /opt optional(可选)这是给主机额外安装软件所摆放的目录 /mnt 临时挂载别的文件系统的，我们可以将光驱挂载在 /mnt/ 上然后进入该目录就可以查看光驱里的内容了 /proc Processes(进程),虚拟目录,他是系统内存的映射,访问这个目录可以获取系统信息 /run 运行目录,显示当前信息 重启就没了 /srv 该目录存放一些服务启动之后需要提取的数据 /sys 系统硬件相关的信息,该文件系统是内核设备树的一个直观反映 /tmp temporary(临时)存放一些临时文件 /var variable(变量)存放一些经常改变的东西,包括各种日志文件 VI/VIM编辑器 vi是Unix系统中最通用的文本编辑器 vim编辑器是从vi中发展出来的更强大的文本编辑器,可以主动以字体颜色辨别语法正确性,vim和vi编辑器完全兼容.
+vim编辑器中有三种模式 i进入编辑模式 :进入命令模式 :wq 保存写入 U(undo)可以回退之前的操作 Esc回到一般模式
+一般模式 指令 解释 yy 复制一行 p 粘贴 dd 删除一行 dw 删除一个单词 e 踏前斩(建议自己试一试) b 回城(建议自己试一试) gg 头 shift&#43;g 尾 编辑模式 指令 解释 i 当前光标前 a 当前光标后 o 当前光标下一行 I 光标所在行最前 A 光标所在行最后 O 当前光标行的上一行 命令模式 指令 解释 :set nu 打开行号 :set nonu 关闭行号 :w 保存 :q 退出 :wq 保存并退出 :q!'>
+<meta property='og:url' content='https://blog.tjq.one/p/linux-%E5%9F%BA%E7%A1%80/'>
+<meta property='og:site_name' content='Tarkyn'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:published_time' content='2022-12-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-12-06T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Linux 基础">
+<meta name="twitter:description" content="Linux系统目录结构 使用 ls / 就可以看到根目录 Linux系统中一切皆文件 swap分区是交换分区类似虚拟内存 目录 解释 /bin Binaries(二进制文件),存放常用的命令 /sbin system Binaries 超级用户使用的比较高级的管理程序和系统守护程序 /boot 存放启动Linux时用的核心文件,包括一些连接文件和镜像文件 /dev Device(设备)存放linux的外部设备，在linux中访问设备和文件的方式是一样的(所以说一切皆文件) /etc 存放所有系统管理所需要的配置文件和子目录 /home 用户的主目录,每一个用户都有自己目录 /lib library(库)存放系统最基本的动态链接共享库,类似Windows里的DLL文件,几乎所有的应用程序都需要这些共享库 /lost&#43;found 这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件 /usr unix shared resources(共享资源),类似 windows 下的 program files 目录 /opt optional(可选)这是给主机额外安装软件所摆放的目录 /mnt 临时挂载别的文件系统的，我们可以将光驱挂载在 /mnt/ 上然后进入该目录就可以查看光驱里的内容了 /proc Processes(进程),虚拟目录,他是系统内存的映射,访问这个目录可以获取系统信息 /run 运行目录,显示当前信息 重启就没了 /srv 该目录存放一些服务启动之后需要提取的数据 /sys 系统硬件相关的信息,该文件系统是内核设备树的一个直观反映 /tmp temporary(临时)存放一些临时文件 /var variable(变量)存放一些经常改变的东西,包括各种日志文件 VI/VIM编辑器 vi是Unix系统中最通用的文本编辑器 vim编辑器是从vi中发展出来的更强大的文本编辑器,可以主动以字体颜色辨别语法正确性,vim和vi编辑器完全兼容.
+vim编辑器中有三种模式 i进入编辑模式 :进入命令模式 :wq 保存写入 U(undo)可以回退之前的操作 Esc回到一般模式
+一般模式 指令 解释 yy 复制一行 p 粘贴 dd 删除一行 dw 删除一个单词 e 踏前斩(建议自己试一试) b 回城(建议自己试一试) gg 头 shift&#43;g 尾 编辑模式 指令 解释 i 当前光标前 a 当前光标后 o 当前光标下一行 I 光标所在行最前 A 光标所在行最后 O 当前光标行的上一行 命令模式 指令 解释 :set nu 打开行号 :set nonu 关闭行号 :w 保存 :q 退出 :wq 保存并退出 :q!">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu35ce788a0dfb0d85e6a3f3b52d6e879b_12330_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🤐</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Tarkyn</a></h1>
+            <h2 class="site-description">我的精神粮食</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='mailto:tarkyn915@outlook.com'
+                        target="_blank"
+                        title="mail"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://t.me/Tarkyn915'
+                        target="_blank"
+                        title="telegram"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#vi是unix系统中最通用的文本编辑器">vi是Unix系统中最通用的文本编辑器</a></li>
+    <li><a href="#vim编辑器中有三种模式"><em>vim编辑器中有三种模式</em></a>
+      <ol>
+        <li><a href="#一般模式">一般模式</a></li>
+        <li><a href="#编辑模式">编辑模式</a></li>
+        <li><a href="#命令模式">命令模式</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#修改linux-网卡配置文件">修改linux 网卡配置文件</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#系统运行级别">系统运行级别</a></li>
+    <li><a href="#centos-7配置开机自启动">CentOS 7配置开机自启动</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/linux/" style="background-color: #2a9d8f; color: #fff;">
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/linux-%E5%9F%BA%E7%A1%80/">Linux 基础</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 06, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="linux系统目录结构">Linux系统目录结构</h1>
+<p>使用 <code>ls /</code> 就可以看到根目录   <em>Linux系统中一切皆文件</em>
+swap分区是交换分区类似虚拟内存
+<img src="/img/linux/1.jpg"></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>目录</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/bin</td>
+<td>Binaries(二进制文件),存放常用的命令</td>
+</tr>
+<tr>
+<td>/sbin</td>
+<td>system Binaries 超级用户使用的比较高级的管理程序和系统守护程序</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td>存放启动Linux时用的核心文件,包括一些连接文件和镜像文件</td>
+</tr>
+<tr>
+<td>/dev</td>
+<td>Device(设备)存放linux的外部设备，在linux中访问设备和文件的方式是一样的(所以说一切皆文件)</td>
+</tr>
+<tr>
+<td>/etc</td>
+<td>存放所有系统管理所需要的配置文件和子目录</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>用户的主目录,每一个用户都有自己目录</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>library(库)存放系统最基本的动态链接共享库,类似Windows里的DLL文件,几乎所有的应用程序都需要这些共享库</td>
+</tr>
+<tr>
+<td>/lost+found</td>
+<td>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件</td>
+</tr>
+<tr>
+<td>/usr</td>
+<td>unix shared resources(共享资源),类似 windows 下的 program files 目录</td>
+</tr>
+<tr>
+<td>/opt</td>
+<td>optional(可选)这是给主机额外安装软件所摆放的目录</td>
+</tr>
+<tr>
+<td>/mnt</td>
+<td>临时挂载别的文件系统的，我们可以将光驱挂载在 /mnt/ 上然后进入该目录就可以查看光驱里的内容了</td>
+</tr>
+<tr>
+<td>/proc</td>
+<td>Processes(进程),虚拟目录,他是系统内存的映射,访问这个目录可以获取系统信息</td>
+</tr>
+<tr>
+<td>/run</td>
+<td>运行目录,显示当前信息 重启就没了</td>
+</tr>
+<tr>
+<td>/srv</td>
+<td>该目录存放一些服务启动之后需要提取的数据</td>
+</tr>
+<tr>
+<td>/sys</td>
+<td>系统硬件相关的信息,该文件系统是内核设备树的一个直观反映</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td>temporary(临时)存放一些临时文件</td>
+</tr>
+<tr>
+<td>/var</td>
+<td>variable(变量)存放一些经常改变的东西,包括各种日志文件</td>
+</tr>
+</tbody>
+</table></div>
+<h1 id="vivim编辑器">VI/VIM编辑器</h1>
+<h2 id="vi是unix系统中最通用的文本编辑器">vi是Unix系统中最通用的文本编辑器</h2>
+<p>vim编辑器是从vi中发展出来的更强大的文本编辑器,可以主动以字体颜色辨别语法正确性,vim和vi编辑器完全兼容.</p>
+<img src="/img/linux/2.png">
+<h2 id="vim编辑器中有三种模式"><em>vim编辑器中有三种模式</em></h2>
+<p><code>i进入编辑模式</code>
+<code>:进入命令模式</code>  :wq 保存写入   U(undo)可以回退之前的操作
+<code>Esc回到一般模式</code></p>
+<h3 id="一般模式">一般模式</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>yy</td>
+<td>复制一行</td>
+</tr>
+<tr>
+<td>p</td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除一行</td>
+</tr>
+<tr>
+<td>dw</td>
+<td>删除一个单词</td>
+</tr>
+<tr>
+<td>e</td>
+<td>踏前斩(建议自己试一试)</td>
+</tr>
+<tr>
+<td>b</td>
+<td>回城(建议自己试一试)</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>头</td>
+</tr>
+<tr>
+<td>shift+g</td>
+<td>尾</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="编辑模式">编辑模式</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>当前光标前</td>
+</tr>
+<tr>
+<td>a</td>
+<td>当前光标后</td>
+</tr>
+<tr>
+<td>o</td>
+<td>当前光标下一行</td>
+</tr>
+<tr>
+<td>I</td>
+<td>光标所在行最前</td>
+</tr>
+<tr>
+<td>A</td>
+<td>光标所在行最后</td>
+</tr>
+<tr>
+<td>O</td>
+<td>当前光标行的上一行</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="命令模式">命令模式</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:set nu</td>
+<td>打开行号</td>
+</tr>
+<tr>
+<td>:set nonu</td>
+<td>关闭行号</td>
+</tr>
+<tr>
+<td>:w</td>
+<td>保存</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>:wq</td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>不保存强制退出</td>
+</tr>
+<tr>
+<td>/abc</td>
+<td>查找abc n向下 N向上</td>
+</tr>
+<tr>
+<td>:s/old/new</td>
+<td>替换当前行匹配到的第一个old为new</td>
+</tr>
+<tr>
+<td>:%s/old/new</td>
+<td>替换当前文档每一行匹配到的第一个old为new</td>
+</tr>
+<tr>
+<td>:%s/old/new/g</td>
+<td>替换当前文档中所有的old为new</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>以上选取了个人觉得常用方便的指令,并不是所有指令</code></p>
+<h1 id="linux网络配置">Linux网络配置</h1>
+<p><code>ifconfig</code> 查看Linux ip信息</p>
+<h2 id="修改linux-网卡配置文件">修改linux 网卡配置文件</h2>
+<p>网卡配置文件存放在 <code>/etc/sysconfig/network-scripts/ifcfg-ens33</code>
+修改配置文件后，需要重启网络服务：<code>systemctl restart network</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">TYPE=&#34;Ethernet&#34;                                   #网卡类型 Ethernet以太网
+</span></span><span class="line"><span class="cl">PROXY_METHOD=&#34;none&#34;                               
+</span></span><span class="line"><span class="cl">BROWSER_ONLY=&#34;no&#34;                                 
+</span></span><span class="line"><span class="cl">BOOTPROTO=&#34;static&#34;                                #网络配置方式 static为静态 DHCP为动态
+</span></span><span class="line"><span class="cl">DEFROUTE=&#34;yes&#34;
+</span></span><span class="line"><span class="cl">IPV4_FAILURE_FATAL=&#34;no&#34;
+</span></span><span class="line"><span class="cl">IPV6INIT=&#34;yes&#34;
+</span></span><span class="line"><span class="cl">IPV6_AUTOCONF=&#34;yes&#34;
+</span></span><span class="line"><span class="cl">IPV6_DEFROUTE=&#34;yes&#34;
+</span></span><span class="line"><span class="cl">IPV6_FAILURE_FATAL=&#34;no&#34;
+</span></span><span class="line"><span class="cl">IPV6_ADDR_GEN_MODE=&#34;stable-privacy&#34;
+</span></span><span class="line"><span class="cl">NAME=&#34;ens33&#34;                                      #网络接口名称
+</span></span><span class="line"><span class="cl">UUID=&#34;484acc59-d7e7-43a3-a4a8-3efa02603bca&#34;       #网卡地址      
+</span></span><span class="line"><span class="cl">DEVICE=&#34;ens33&#34;                                    #网络设备名称
+</span></span><span class="line"><span class="cl">ONBOOT=&#34;yes&#34;                                      #是否开机自动启动  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">IPADDR=192.168.254.100                            #IP地址
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">GATEWAY=192.168.254.2                             #网关  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">DNS1=192.168.254.2                                #域名解析服务器
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NETMASK=255.255.255.0                             #子网掩码
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">一般是修改了网络配置方式之后，需要自行添加下面的ip地址，网关，dns等..
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="centos-7系统管理">CentOS 7系统管理</h1>
+<p>基本语法  <code>systemctl   start | stop | restart | status</code>    服务名</p>
+<p>查看服务的方法  <code>/usr/lib/systemd/system</code></p>
+<p>系统服务开机自启  <code>setup</code></p>
+<h2 id="系统运行级别">系统运行级别</h2>
+<p>开机 &ndash; BIOS &ndash; /boot &ndash; init进程 &ndash; 运行级别 &ndash; 运行级对应的服务</p>
+<p>Linux系统有7个运行模式 <code>常用的级别是3和5</code></p>
+<ul>
+<li>运行级别0: 系统停机状态，系统默认不能设置0 否则不能正常启动</li>
+<li>运行级别1: 单用户工作状态，root权限，用于系统维护，禁止远程登陆  类似Windows的安全模式</li>
+<li>运行级别2: 多用户状态(没有NFS)，不支持网络</li>
+<li>运行级别3: 完全的多用户状态(有NFS)，登陆后进入控制台命令行模式</li>
+<li>运行级别4: 系统保留，未使用</li>
+<li>运行级别5: X11控制台，登录后进入图形GUI模式</li>
+<li>运行级别6: 系统正常关闭并重启，默认运行级别不能设6 否则不能正常启动</li>
+</ul>
+<p><code>systemctl get-default</code>  查看当前运行级别</p>
+<p><code>vi /etc/inittab</code>   查看默认级别</p>
+<p><code>Ctrl + Alt+ ?</code>   快捷键</p>
+<p><code>init  ?</code>    ?对应系统级别的数字</p>
+<h2 id="centos-7配置开机自启动">CentOS 7配置开机自启动</h2>
+<p>查看所有开机自启动的信息
+<code>systemctl list-unit-files</code></p>
+<p>设置开机是否自启动
+<code>systemctl disable/enable xxxxxxxx</code></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/linux/">Linux</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E6%9C%89%E8%B6%A3%E7%9A%84-linux/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">有趣的 Linux</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/linux-%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux 基础设置</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2023 Tarkyn
+    </section>
+    
+    <section class="powerby">
+        <a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20220915">萌ICP备20220915号</a><br>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.21.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

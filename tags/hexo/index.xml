@@ -8,11 +8,11 @@
         <language>en</language>
         <copyright>Tarkyn</copyright>
         <lastBuildDate>Wed, 15 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tjq.one/tags/hexo/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Hexo setup</title>
-        <link>https://blog.tjq.one/p/hexo-setup/</link>
+        <title>Hexo 博客搭建</title>
+        <link>https://blog.tjq.one/p/hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
         <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.tjq.one/p/hexo-setup/</guid>
+        <guid>https://blog.tjq.one/p/hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
         <description>&lt;h1 id=&#34;搭建环境&#34;&gt;搭建环境&lt;/h1&gt;
 &lt;p&gt;在电脑中安装 &lt;a class=&#34;link&#34; href=&#34;https://nodejs.org/en&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;nodejs&lt;/a&gt; &lt;a class=&#34;link&#34; href=&#34;https://git-scm.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

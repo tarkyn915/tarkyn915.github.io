@@ -13,7 +13,7 @@
         <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
         
         <guid>https://blog.tjq.one/p/nginx-config/</guid>
-        <description>&lt;img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*mjG1YdoT7xPcnznN.jpg" alt="Featured image of post Nginx config" /&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://nginx.org/en/download.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://nginx.org/en/download.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Nginx官网&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;基础模板&#34;&gt;基础模板&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -165,7 +165,7 @@
         <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
         
         <guid>https://blog.tjq.one/p/nginx-optimize/</guid>
-        <description>&lt;img src="https://loremflickr.com/900/300" alt="Featured image of post Nginx optimize" /&gt;&lt;h3 id=&#34;ssl优化&#34;&gt;&lt;strong&gt;ssl优化&lt;/strong&gt;&lt;/h3&gt;
+        <description>&lt;h3 id=&#34;ssl优化&#34;&gt;&lt;strong&gt;ssl优化&lt;/strong&gt;&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1

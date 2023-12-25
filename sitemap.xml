@@ -32,13 +32,19 @@
     <loc>https://blog.tjq.one/tags/</loc>
     <lastmod>2023-12-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://blog.tjq.one/categories/blog/</loc>
+    <lastmod>2023-12-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.tjq.one/tags/hugo/</loc>
     <lastmod>2023-12-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.tjq.one/p/hugo-setup/</loc>
+    <loc>https://blog.tjq.one/p/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2023-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.tjq.one/tags/linux/</loc>
+    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tjq.one/categories/linux/</loc>
     <lastmod>2023-03-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.tjq.one/p/%E6%9C%89%E8%B6%A3%E7%9A%84-linux/</loc>
@@ -47,19 +53,22 @@
     <loc>https://blog.tjq.one/tags/docker/</loc>
     <lastmod>2023-03-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.tjq.one/p/docker-%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://blog.tjq.one/categories/docker/</loc>
+    <lastmod>2023-03-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.tjq.one/p/docker-%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2023-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.tjq.one/tags/hexo/</loc>
     <lastmod>2023-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.tjq.one/p/hexo-setup/</loc>
+    <loc>https://blog.tjq.one/p/hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2023-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.tjq.one/p/linux-%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE/</loc>
     <lastmod>2023-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.tjq.one/p/linux-note/</loc>
+    <loc>https://blog.tjq.one/p/linux-%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-12-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.tjq.one/tags/%E5%93%AA%E5%90%92%E9%9D%A2%E6%9D%BF/</loc>
@@ -98,7 +107,5 @@
     <loc>https://blog.tjq.one/links/</loc>
   </url><url>
     <loc>https://blog.tjq.one/search/</loc>
-  </url><url>
-    <loc>https://blog.tjq.one/categories/test/</loc>
   </url>
 </urlset>

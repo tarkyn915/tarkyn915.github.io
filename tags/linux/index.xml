@@ -13,7 +13,7 @@
         <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
         
         <guid>https://blog.tjq.one/p/%E6%9C%89%E8%B6%A3%E7%9A%84-linux/</guid>
-        <description>&lt;img src="https://cdn.arstechnica.net/wp-content/uploads/2012/06/torvaldsnvidia-640x424.jpg" alt="Featured image of post 有趣的 Linux" /&gt;&lt;h1 id=&#34;1黑客帝国&#34;&gt;1.黑客帝国&lt;/h1&gt;
+        <description>&lt;h1 id=&#34;1黑客帝国&#34;&gt;1.黑客帝国&lt;/h1&gt;
 &lt;p&gt;一个全屏的数字雨，可以用来装高手&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -234,11 +234,11 @@
 </description>
         </item>
         <item>
-        <title>Linux note</title>
-        <link>https://blog.tjq.one/p/linux-note/</link>
+        <title>Linux 基础</title>
+        <link>https://blog.tjq.one/p/linux-%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Tue, 06 Dec 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.tjq.one/p/linux-note/</guid>
+        <guid>https://blog.tjq.one/p/linux-%E5%9F%BA%E7%A1%80/</guid>
         <description>&lt;h1 id=&#34;linux系统目录结构&#34;&gt;Linux系统目录结构&lt;/h1&gt;
 &lt;p&gt;使用 &lt;code&gt;ls /&lt;/code&gt; 就可以看到根目录   &lt;em&gt;Linux系统中一切皆文件&lt;/em&gt;
 swap分区是交换分区类似虚拟内存
