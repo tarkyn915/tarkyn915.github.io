@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Pages on Tarkyn</title>
+        <title>Pages on Tarkyn的小屋</title>
         <link>https://blog.tjq.one/page/</link>
-        <description>Recent content in Pages on Tarkyn</description>
+        <description>Recent content in Pages on Tarkyn的小屋</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Tarkyn</copyright>
@@ -15,12 +15,10 @@
         <guid>https://blog.tjq.one/about/</guid>
         <description>&lt;p&gt;一个普普通通的大专社畜，在家躺平了一年，对未来有点迷茫&lt;/p&gt;
 &lt;p&gt;不是计算机专业，但是喜欢折腾一些乱七八糟的东西&lt;/p&gt;
-&lt;p&gt;觉得写代码是一件很酷的事情，但可能自己真的没有天赋吧&lt;/p&gt;
-&lt;p&gt;可能会尝试运维，服务器这类的工作吧 &lt;em&gt;前提是找得到&lt;/em&gt; &lt;del&gt;不是&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;可能会尝试运维，服务器这类的工作吧 &lt;em&gt;前提是找得到&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;搭建这个博客本意是当个笔记，顺便记录生活，写点日记&lt;/p&gt;
 &lt;p&gt;如果你看到了这里并且有空闲的时间，可以找我聊聊天~（推荐使用TG）&lt;/p&gt;
-&lt;p&gt;也欢迎小伙伴分享友链，一起交流&lt;/p&gt;
 </description>
         </item>
         <item>

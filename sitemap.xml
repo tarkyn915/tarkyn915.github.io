@@ -23,77 +23,11 @@
     <loc>https://blog.tjq.one/p/nginx-config/</loc>
     <lastmod>2023-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.tjq.one/p/nginx-optimize/</loc>
-    <lastmod>2023-12-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.tjq.one/post/</loc>
     <lastmod>2023-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.tjq.one/tags/</loc>
     <lastmod>2023-12-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/categories/blog/</loc>
-    <lastmod>2023-12-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/tags/hugo/</loc>
-    <lastmod>2023-12-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/p/hugo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2023-12-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/tags/linux/</loc>
-    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/categories/linux/</loc>
-    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/p/%E6%9C%89%E8%B6%A3%E7%9A%84-linux/</loc>
-    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/tags/docker/</loc>
-    <lastmod>2023-03-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/categories/docker/</loc>
-    <lastmod>2023-03-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/p/docker-%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2023-03-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/tags/hexo/</loc>
-    <lastmod>2023-03-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/p/hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2023-03-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/p/linux-%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE/</loc>
-    <lastmod>2023-03-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/p/linux-%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-12-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/tags/%E5%93%AA%E5%90%92%E9%9D%A2%E6%9D%BF/</loc>
-    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/p/%E5%93%AA%E5%90%92%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/tags/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF/</loc>
-    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/p/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/tags/telegram/</loc>
-    <lastmod>2022-11-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/p/telegram-%E7%A7%81%E8%81%8A%E6%9C%BA%E5%99%A8%E4%BA%BA/</loc>
-    <lastmod>2022-11-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/tags/git/</loc>
-    <lastmod>2022-10-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tjq.one/p/git-%E5%BE%85%E6%9B%B4%E6%96%B0/</loc>
-    <lastmod>2022-10-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.tjq.one/tags/python/</loc>
     <lastmod>2022-08-01T00:00:00+00:00</lastmod>
@@ -104,7 +38,13 @@
     <loc>https://blog.tjq.one/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://blog.tjq.one/categories/blog/</loc>
+  </url><url>
+    <loc>https://blog.tjq.one/categories/docker/</loc>
+  </url><url>
     <loc>https://blog.tjq.one/links/</loc>
+  </url><url>
+    <loc>https://blog.tjq.one/categories/linux/</loc>
   </url><url>
     <loc>https://blog.tjq.one/search/</loc>
   </url>
